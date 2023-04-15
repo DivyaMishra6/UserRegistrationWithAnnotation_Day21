@@ -11,7 +11,7 @@ namespace UserRegistrationWithAnnotationDay21
     public class CheckValidation
     {
         //FIRST NAME
-        // [Required(ErrorMessage = "Property check {0} is required")]
+        [Required(ErrorMessage = "Property check {0} is required")]
         // [StringLength(100,MinimumLength =3 ,ErrorMessage = "Name should be minimum 3 character" )]
         [RegularExpression("^[A-Z]{1}[A-Za-z]{2,}$", ErrorMessage = "Name should be minimum 3 character and start with caps")]
         [DataType(DataType.Text)]
@@ -20,6 +20,7 @@ namespace UserRegistrationWithAnnotationDay21
 
 
         //LAST NAME
+        [Required(ErrorMessage = "Property check {0} is required")]
         [RegularExpression("^[A-Z]{1}[A-Za-z]{2,}$", ErrorMessage = "Name should be minimum 3 character and start with caps")]
         [DataType(DataType.Text)]
         public string LastName { get; set; }
