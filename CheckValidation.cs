@@ -24,5 +24,9 @@ namespace UserRegistrationWithAnnotationDay21
         [EmailAddress]
         public string Email { get; set; }
 
+        [DataType(DataType.PhoneNumber)]
+        [Phone]
+
+        public string Phone { get; set; }
     }
 }
