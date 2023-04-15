@@ -38,7 +38,7 @@ namespace UserRegistrationWithAnnotationDay21
         public string Phone { get; set; }
 
         //PASWORD
-        [RegularExpression("^(?=.*[A-Z])(?=.*[0-9]).{8,}$", ErrorMessage = "password minimum 8 character and atleast 1 upper case")]
+        [RegularExpression("^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=?]).{8,}$", ErrorMessage = "password minimum 8 character and atleast 1 upper case")]
         [DataType(DataType.Password)]
         [PasswordPropertyText]
 
