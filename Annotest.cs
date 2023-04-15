@@ -24,7 +24,7 @@ namespace UserRegistrationWithAnnotationDay21
             check.Password = Console.ReadLine();
 
 
-
+            string[] emailSamples = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" };
             ValidationContext con = new ValidationContext(check);
             List<ValidationResult> results = new List<ValidationResult>();
 
@@ -35,11 +35,18 @@ namespace UserRegistrationWithAnnotationDay21
                 {
                     Console.WriteLine("Member Name : {0}", i.MemberNames.First());
                     Console.WriteLine("Error Message : {0}", i.ErrorMessage);
+
                 }
+
             }
             else
             {
                 Console.WriteLine(" FirstName :" + check.FirstName + "\n LasttName :" + check.LastName + "\n email :" + check.Email + "\n PhoneNumber : " + check.Phone + "\n Password : " + check.Password);
+
+                foreach (string email in emailSamples)
+                {
+                    Console.WriteLine("{0} : {1}", email, (new EmailAddressAttribute().IsValid(email) ? "Valid" : "Invalid"));
+                }
             }
         }    
     }
